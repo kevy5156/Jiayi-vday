@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will You Be My Valentine? 💝</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1 id="title" class="title"></h1>
+    <p id="subtitle" class="subtitle"></p>
+
+    <!-- Love meter step -->
+    <div id="loveMeter" class="love-meter hidden">
+      <div class="meter-row">
+        <span id="meterLabel"></span>
+        <span id="meterPct"></span>
+      </div>
+      <input id="meter" type="range" min="0" max="6000" value="100" />
+      <p id="meterMsg" class="meter-msg"></p>
+      <button id="nextBtn" class="btn primary"></button>
+    </div>
+
+    <!-- Buttons step -->
+    <div id="buttons" class="buttons"></div>
+
+    <!-- Celebration step -->
+    <div id="celebration" class="celebration hidden">
+      <h2 id="celebrateTitle"></h2>
+      <p id="celebrateMsg"></p>
+      <div id="celebrateEmojis" class="emoji-line"></div>
+      <button id="restartBtn" class="btn ghost">Restart 🔁</button>
+    </div>
+  </main>
+
+  <!-- floating background emojis -->
+  <div id="floatLayer" class="float-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
