@@ -1,0 +1,132 @@
+:root{
+  --bg1:#ffafbd;
+  --bg2:#ffc3a0;
+  --btn:#ff6b6b;
+  --btnHover:#ff8787;
+  --text:#ff4757;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  overflow:hidden;
+}
+
+.card{
+  width:min(680px, 92vw);
+  background: rgba(255,255,255,0.80);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.title{
+  color:var(--text);
+  font-size: clamp(26px, 3.6vw, 40px);
+  margin: 0 0 8px;
+}
+
+.subtitle{
+  margin: 0 0 18px;
+  font-size: clamp(16px, 2.3vw, 20px);
+  color:#333;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.btn{
+  border:none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor:pointer;
+  transition: transform .12s ease, background .12s ease;
+  user-select:none;
+}
+.btn:active{ transform: scale(0.98); }
+
+.primary{
+  background: var(--btn);
+  color: #fff;
+}
+.primary:hover{ background: var(--btnHover); }
+
+.ghost{
+  background: transparent;
+  border: 2px solid rgba(0,0,0,0.12);
+  color:#333;
+}
+
+.hidden{ display:none; }
+
+.love-meter{
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.7);
+}
+
+.meter-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-weight:600;
+  color:#222;
+}
+.meter-msg{ margin: 10px 0 0; color:#222; }
+
+.celebration{
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.75);
+}
+.emoji-line{
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.float-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+.floaty{
+  position:absolute;
+  font-size: 26px;
+  opacity: 0.9;
+  animation: floatUp var(--dur) linear infinite;
+  transform: translateX(var(--dx));
+}
+
+@keyframes floatUp{
+  from { transform: translate(var(--dx), 110vh); }
+  to   { transform: translate(calc(var(--dx) * -1), -10vh); }
+}
+
+/* playful wiggle for NO button (still clickable) */
+.wiggle{
+  animation: wiggle .5s ease-in-out infinite alternate;
+}
+@keyframes wiggle{
+  from { transform: translate(0,0); }
+  to   { transform: translate(6px, -4px); }
+}
